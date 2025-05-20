@@ -1,0 +1,88 @@
+.intro {
+  text-align: center;
+  padding: 30px;
+  background: linear-gradient(to right, #ffffff, #f9f9f9);
+}
+
+.intro h1 {
+  color: #ff7900;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.intro p {
+  color: #333;
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+/* Custom CSS */
+:root {
+  --primary-color: #2c9b92;
+  --hover-color: #23857d;
+}
+
+.brand-header {
+  background: #f8f9fa;
+  border-bottom: 3px solid var(--primary-color);
+  padding: 1rem 0;
+}
+
+.nav-menu {
+  transition: all 0.3s ease;
+}
+
+.nav-link {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  background: var(--primary-color);
+  color: white !important;
+}
+
+.content-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  margin: 1rem auto;
+  max-width: 1200px;
+  padding: 2rem;
+}
+
+.content-card:hover {
+  transform: translateY(-5px);
+}
+
+.phone-link {
+  transition: all 0.3s ease;
+}
+
+.phone-link:hover {
+  color: var(--hover-color) !important;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu {
+    flex-direction: column;
+    align-items: flex-start;
+    display: none;
+  }
+
+  .mobile-menu.active {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block !important;
+  }
+
+  .content-card {
+    margin: 1rem;
+    padding: 1rem;
+  }
+}

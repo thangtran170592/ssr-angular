@@ -1,0 +1,17 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ContactComponent } from './contact.component';
+import { ContactRoutingModule } from './contact.routing';
+import { PanelModule } from 'primeng/panel';
+import { BreadcumbComponent } from '@components/breadcumb/breadcumb.component';
+@NgModule({
+  declarations: [ContactComponent],
+  imports: [
+    CommonModule,
+    ContactRoutingModule,
+    PanelModule,
+    BreadcumbComponent,
+  ],
+  exports: [ContactComponent],
+})
+export class ContactModule {}

@@ -1,0 +1,10 @@
+.custom-megamenu {
+  background: transparent !important;
+  border: none !important;
+
+  .p-megamenu-item {
+    .active {
+      border-bottom: 2px solid #fff !important;
+    }
+  }
+}

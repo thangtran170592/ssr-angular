@@ -1,0 +1,64 @@
+<div class="w-full" [@fadeIn]>
+  <header class="main-header mx-auto text-center p-2">
+    <p-avatar
+      [routerLink]="'/'"
+      image="assets/images/logo.png"
+      class="flex items-center justify-center mr-2"
+      size="xlarge"
+    />
+  </header>
+
+  <section
+    class="main-banner flex flex-col items-center justify-center gap-4 min-h-[55vh]"
+  >
+    <h1 class="text-4xl font-bold">Tiên phong giải pháp pha chế toàn diện</h1>
+    <div class="flex flex-row justify-center gap-6">
+      <p-button
+        label="Trang chủ"
+        [rounded]="true"
+        severity="secondary"
+        size="large"
+        routerLink="/trang-chu"
+        styleClass="px-8"
+      />
+      <p-button
+        label="Liên hệ ngay"
+        [rounded]="true"
+        severity="primary"
+        size="large"
+        routerLink="/trang-chu/lien-he"
+        styleClass="px-8"
+      />
+    </div>
+  </section>
+
+  <main class="flex justify-center bg-white py-10">
+    <div
+      class="flex flex-col services-card bg-white rounded-xl p-4 min-w-[70%] border-2 border-green-400 gap-4"
+    >
+      <h2
+        class="services-title inline-flex items-center text-2xl font-bold gap-4"
+      >
+        <span class="bar"></span>
+        <span>Dịch vụ của chúng tôi</span>
+      </h2>
+      <ul class="services-list list-none list-inside">
+        <li class="services-item">Nguyên liệu pha chế cà phê - trà sữa</li>
+        <li class="services-item">Công cụ dụng cụ, thiết bị máy móc</li>
+        <li class="services-item">Tư vấn thiết kế - thi công</li>
+        <li class="services-item">Đào tạo pha chế tổng hợp</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="main-header text-center py-6">
+    <div class="text-sm mb-1">© 2023 NHẬT MINH FOOD</div>
+    <div class="text-sm text-secondary">
+      <p>📞 0352 56 59 55 - 0905 92 56 56</p>
+      <p>
+        📍 Văn phòng: 43/30 Nguyễn Đình Tú - P.Hoa An - Q. Cẩm Lệ - TP Đà Nẵng
+      </p>
+      <p>📦 Kho hàng: 204 Bắc Sơn - P.Hoa An - Q. Cẩm Lệ - TP Đà Nẵng</p>
+    </div>
+  </footer>
+</div>

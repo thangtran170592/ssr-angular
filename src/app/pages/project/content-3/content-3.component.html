@@ -1,0 +1,88 @@
+<p-stepper [value]="1">
+  <p-step-item [value]="1">
+    <p-step>Elaboration Week</p-step>
+    <p-step-panel>
+      <ng-template #content let-activateCallback="activateCallback">
+        <div class="flex flex-col">
+          <h3 class="text-base font-bold">
+            Bắt đầu vào thứ Tư nhưng trước 2 ngày
+          </h3>
+          <div class="flex flex-col gap-2 m-0 text-base">
+            <span class="font-bold"
+              >1. Thay đổi status của ticket thành **Under Elaboration**</span
+            >
+            <span class="font-bold">2. Tự nghiên cứu ticket.</span>
+            <span class="font-bold"
+              >3. Chuẩn bị các câu hỏi để thảo luận với nhóm nội bộ trước (PM
+              hoặc QA, v.v.), sau đó nhắn tin hoặc gọi điện Slack / Email để hỏi
+              với khách hàng.</span
+            >
+            <span class="font-bold"
+              >4. Tạo một subtask "Initial elaboration" cho các ticket cần
+              clarify</span
+            >
+            <span class="font-bold"
+              >5. Xem xét các yêu cầu và design của task sẽ thực hiện</span
+            >
+            <span class="font-bold"
+              >6. Ghi lại tất cả các công việc, các câu hỏi vào subtask "Initial
+              elaboration"</span
+            >
+            <span class="font-bold"
+              >7. Tạo một subtask "Architecture Design"</span
+            >
+            <a
+              href="https://drive.google.com/drive/folders/1Kxgmw_65NTkuJYhrBOb-Tp_PA6Y7by9a"
+              target="_blank"
+              >Link</a
+            >
+            <span class="font-bold"
+              >8. Nêu solution để phát triển tính năng hoặc sửa lỗi.</span
+            >
+            <span class="font-bold"
+              >9. Ghi lại solution vào phần description của subtask
+              "Architecture Design"</span
+            >
+            <span class="font-bold">10. Cung cấp estimate cho ticket</span>
+          </div>
+        </div>
+      </ng-template>
+    </p-step-panel>
+  </p-step-item>
+
+  <p-step-item [value]="2">
+    <p-step>Development / Coding</p-step>
+    <p-step-panel>
+      <ng-template #content let-activateCallback="activateCallback">
+        <div class="flex flex-col gap-2 m-0 text-base">
+          <h3 class="text-base font-bold">
+            Bắt đầu vào thứ Tư nhưng trước 2 ngày
+          </h3>
+          <div class="flex flex-col gap-2 m-0 text-base">
+            <span class="font-bold"
+              >1. Đổi status của ticket thành **In Development**</span
+            >
+            <span class="font-bold"
+              >2. Checkout branch mới từ branch vừa release (release/v1)</span
+            >
+            <span class="font-bold">3. Commit code và tạo PR</span>
+            <span class="font-bold"
+              >4. Comment vào ticket để Fernando review.</span
+            >
+          </div>
+        </div>
+      </ng-template>
+    </p-step-panel>
+  </p-step-item>
+
+  <p-step-item [value]="3">
+    <p-step>Sprint Retrospective Meetings</p-step>
+    <p-step-panel>
+      <ng-template #content let-activateCallback="activateCallback">
+        <div class="flex flex-col gap-2 m-0 text-base">
+          <h3 class="text-base font-bold">Xem xét lại sprint vừa xong.</h3>
+        </div>
+      </ng-template>
+    </p-step-panel>
+  </p-step-item>
+</p-stepper>

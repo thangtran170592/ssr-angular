@@ -1,0 +1,53 @@
+.landing-layout-container {
+  font-size: 1rem;
+}
+.main-header {
+  background: var(--p-surface-700);
+
+  .logo {
+    font-size: 2em;
+  }
+}
+
+.main-banner {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 127, 0, 0.85) 0%,
+      rgba(76, 175, 80, 0.85) 100%
+    ),
+    url("assets/images/banner.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.services-card {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  color: #4caf50;
+
+  .services-title .bar {
+    display: inline-block;
+    width: 5px;
+    height: 100%;
+    background: #ff7f00;
+    border-radius: 2px;
+  }
+
+  .services-list {
+    .services-item {
+      font-size: 1em;
+      margin-bottom: 0.7em;
+      padding-left: 1.7em;
+      color: #4caf50;
+      position: relative;
+
+      &:before {
+        content: "✓";
+        color: #4caf50;
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+}

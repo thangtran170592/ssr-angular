@@ -1,0 +1,29 @@
+<div class="card">
+  <p-carousel
+    [value]="sliders"
+    [numVisible]="1"
+    [numScroll]="1"
+    [circular]="true"
+    [showNavigators]="false"
+    [autoplayInterval]="3000"
+    [responsiveOptions]="responsiveOptions"
+    contentClass="relative"
+    indicatorsContentClass="absolute bottom-0 w-full"
+  >
+    <ng-template let-slider #item>
+      <div class="border border-surface rounded-border my-1">
+        <div class="relative mx-auto">
+          <img
+            src="{{ slider.image }}"
+            [alt]="slider.title"
+            class="w-full rounded-border"
+          />
+          <p-tag
+            [value]="slider.description"
+            class="absolute top-0 left-0 invisible"
+          />
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
+</div>

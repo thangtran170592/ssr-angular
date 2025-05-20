@@ -1,0 +1,63 @@
+<div *ngIf="platformService.isBrowser()">
+  <p-megamenu [model]="items" styleClass="custom-megamenu">
+    <ng-template #start>
+      <p-avatar
+        [routerLink]="'/tong-quan'"
+        image="assets/images/evizi-logo.jpg"
+        class="flex items-center justify-center mr-2"
+        size="xlarge"
+      />
+    </ng-template>
+    <ng-template #item let-item>
+      <a
+        *ngIf="item.root"
+        pRipple
+        class="flex items-center cursor-pointer px-2 py-2 overflow-hidden relative font-semibold text-lg uppercase"
+        [routerLink]="item.routerLink"
+        [routerLinkActive]="'active'"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <i [ngClass]="item.icon"></i>
+        <span class="ml-2">{{ item.label }}</span>
+      </a>
+      <a
+        *ngIf="!item.root && !item.image"
+        [routerLink]="item.routerLink"
+        [routerLinkActive]="'active'"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="flex items-center p-2 cursor-pointer mb-2 gap-2"
+      >
+        <span
+          class="inline-flex items-center justify-center rounded-full bg-primary text-primary-contrast w-4 h-4"
+        >
+          <i [ngClass]="item.icon + ' text-lg'"></i>
+        </span>
+        <div class="inline-flex flex-col">
+          <span
+            class="font-medium text-lg text-surface-900 dark:text-surface-0"
+            >{{ item.label }}</span
+          >
+        </div>
+      </a>
+      <div *ngIf="item.image" class="flex flex-col items-start gap-2">
+        <img [src]="item.image" alt="megamenu-demo" class="w-full" />
+        <span>{{ item.subtext }}</span>
+        <p-button [label]="item.label" [outlined]="true"></p-button>
+      </div>
+    </ng-template>
+    <ng-template #end>
+      <p-floatlabel variant="on">
+        <p-iconfield>
+          <input
+            type="text"
+            pInputText
+            placeholder="Search"
+            [(ngModel)]="search"
+            pSize="large"
+          />
+          <p-inputicon styleClass="pi pi-search" />
+        </p-iconfield>
+      </p-floatlabel>
+    </ng-template>
+  </p-megamenu>
+</div>

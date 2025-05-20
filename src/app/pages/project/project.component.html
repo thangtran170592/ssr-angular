@@ -1,0 +1,103 @@
+<app-breadcumb [items]="items" />
+<p-stepper [value]="1" class="basis-[50rem]">
+  <p-step-list>
+    <p-step [value]="1">Các thành phần của Qolo Platform</p-step>
+    <p-step [value]="2">Các cấu trúc của Qolo Platform</p-step>
+    <p-step [value]="3">Flow làm việc</p-step>
+    <p-step [value]="4">Demo API</p-step>
+  </p-step-list>
+  <p-step-panels>
+    <p-step-panel [value]="1">
+      <ng-template #content let-activateCallback="activateCallback">
+        <div class="flex flex-col">
+          <div
+            class="border-1 rounded bg-surface-50 flex-auto flex justify-center"
+          >
+            <app-content-1 />
+          </div>
+          <div class="flex pt-6 justify-end">
+            <p-button
+              label="Next"
+              icon="pi pi-arrow-right"
+              iconPos="right"
+              (onClick)="activateCallback(2)"
+            />
+          </div>
+        </div>
+      </ng-template>
+    </p-step-panel>
+
+    <p-step-panel [value]="2">
+      <ng-template #content let-activateCallback="activateCallback">
+        <div class="flex flex-col">
+          <div
+            class="border-1 rounded bg-surface-50 flex-auto flex justify-center"
+          >
+            <app-content-2 />
+          </div>
+        </div>
+        <div class="flex pt-6 justify-between">
+          <p-button
+            label="Back"
+            severity="secondary"
+            icon="pi pi-arrow-left"
+            (onClick)="activateCallback(1)"
+          />
+          <p-button
+            label="Next"
+            icon="pi pi-arrow-right"
+            iconPos="right"
+            (onClick)="activateCallback(3)"
+          />
+        </div>
+      </ng-template>
+    </p-step-panel>
+
+    <p-step-panel [value]="3">
+      <ng-template #content let-activateCallback="activateCallback">
+        <div class="flex flex-col">
+          <div
+            class="border-1 rounded bg-surface-50 flex-auto flex justify-center"
+          >
+            <app-content-3 />
+          </div>
+        </div>
+        <div class="flex pt-6 justify-between">
+          <p-button
+            label="Back"
+            severity="secondary"
+            icon="pi pi-arrow-left"
+            iconPos="right"
+            (onClick)="activateCallback(2)"
+          />
+          <p-button
+            label="Next"
+            icon="pi pi-arrow-right"
+            iconPos="right"
+            (onClick)="activateCallback(4)"
+          />
+        </div>
+      </ng-template>
+    </p-step-panel>
+    <p-step-panel [value]="4">
+      <ng-template #content let-activateCallback="activateCallback">
+        <div class="flex flex-col">
+          <div
+            class="border-1 rounded bg-surface-50 flex-auto flex justify-center"
+          >
+            <app-content-4 />
+          </div>
+        </div>
+        <div class="flex pt-6 justify-start">
+          <p-button
+            label="Back"
+            severity="secondary"
+            icon="pi pi-arrow-left"
+            iconPos="right"
+            (onClick)="activateCallback(3)"
+          />
+        </div>
+      </ng-template>
+    </p-step-panel>
+  </p-step-panels>
+</p-stepper>
