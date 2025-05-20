@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TrainingComponent } from './training.component';
+import { TrainingComponent } from '@pages/training/training.component';
 
 export const routes: Routes = [
   {

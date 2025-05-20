@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BlankLayoutComponent } from './blank-layout.component';
+import { BlankLayoutComponent } from '@layouts/blank-layout/blank-layout.component';
 const routes: Routes = [
   {
     path: '',

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { MainLayoutRoutingModule } from './main-layout.routing';
-import { MainLayoutComponent } from './main-layout.component';
-import { HeaderComponent } from '../../components/header/header.component';
+import { MainLayoutRoutingModule } from '@layouts/main-layout/main-layout.routing';
+import { MainLayoutComponent } from '@layouts/main-layout/main-layout.component';
+import { HeaderComponent } from '@components/header/header.component';
 import {
   FooterComponent,
   SliderComponent,

@@ -20,14 +20,14 @@
     "baseUrl": "src",
     "paths": {
       "@components/*": ["app/components/*"],
-      "@components": ["app/components/index.ts"],
       "@assets/*": ["assets/*"],
       "@images/*": ["assets/images/*"],
       "@animations/*": ["app/animations/*"],
       "@models/*": ["app/models/*"],
       "@core/*": ["app/core/*"],
       "@pages/*": ["app/pages/*"],
-      "@layouts/*": ["app/layouts/*"]
+      "@layouts/*": ["app/layouts/*"],
+      "@app/*": ["app/*"]
     }
   },
   "angularCompilerOptions": {

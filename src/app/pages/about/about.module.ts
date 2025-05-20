@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AboutComponent } from './about.component';
-import { AboutRoutingModule } from './about.routing';
+import { AboutComponent } from '@pages/about/about.component';
+import { AboutRoutingModule } from '@pages/about/about.routing';
 import { PanelModule } from 'primeng/panel';
 import { BreadcumbComponent } from '@components/breadcumb/breadcumb.component';
 @NgModule({

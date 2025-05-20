@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { LandingLayoutComponent } from './landing-layout.component';
+import { LandingLayoutComponent } from '@layouts/landing-layout/landing-layout.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { AvatarModule } from 'primeng/avatar';
