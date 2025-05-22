@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { fadeIn } from '@animations/fade-in.animation';
 @Component({
   selector: 'app-main-layout',
@@ -8,5 +9,13 @@ import { fadeIn } from '@animations/fade-in.animation';
   animations: [fadeIn],
 })
 export class MainLayoutComponent implements OnInit {
-  ngOnInit() {}
+  isHome = signal<boolean>(false);
+  constructor(private route: ActivatedRoute) {}
+  ngOnInit() {
+    console.log(this.route);
+    this.route.data.subscribe((data: any) => {
+      console.log(data);
+      this.isHome.set(data.isHome);
+    });
+  }
 }

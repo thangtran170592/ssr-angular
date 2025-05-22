@@ -10,20 +10,20 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'trang-chu',
+    path: '',
     title: 'Trang Chủ',
     loadChildren: () =>
       import('@layouts/main-layout/main-layout.module').then(
         (m) => m.MainLayoutModule
       ),
   },
-  {
-    path: '',
-    title: 'Trang Chủ',
-    loadChildren: () =>
-      import('@layouts/blank-layout/blank-layout.module').then(
-        (m) => m.BlankLayoutModule
-      ),
-  },
+  // {
+  //   path: '',
+  //   title: 'Trang Chủ',
+  //   loadChildren: () =>
+  //     import('@layouts/blank-layout/blank-layout.module').then(
+  //       (m) => m.BlankLayoutModule
+  //     ),
+  // },
   { path: '**', redirectTo: 'tong-quan' },
 ];

@@ -5,10 +5,10 @@
     {
       "id": "1",
       "label": "Trang Chủ",
-      "routerLink": "/trang-chu",
+      "routerLink": "/",
       "icon": "pi pi-home",
       "root": true,
-      "styleClass": "this.currentUrl === '/trang-chu' ? 'active' : ''"
+      "styleClass": "this.currentUrl === '/' ? 'active' : ''"
     },
     {
       "id": "3",

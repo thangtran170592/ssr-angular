@@ -1,11 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MenuResolver } from '@core/resolvers/menu.resolver';
 import { BlankLayoutComponent } from '@layouts/blank-layout/blank-layout.component';
 const routes: Routes = [
   {
     path: '',
     title: 'Trang Chủ',
     component: BlankLayoutComponent,
+    resolve: {
+      menu: MenuResolver,
+    },
+    data: {
+      isHome: true,
+    },
     children: [
       {
         path: 'gioi-thieu',

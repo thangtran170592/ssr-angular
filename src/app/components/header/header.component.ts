@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, signal } from '@angular/core';
 import { ImageModule } from 'primeng/image';
-import { Router, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { MegaMenuModule } from 'primeng/megamenu';
 import { CommonModule } from '@angular/common';
 import { MegaMenuItem } from 'primeng/api';
@@ -12,7 +12,6 @@ import { FloatLabelModule } from 'primeng/floatlabel';
 import { InputTextModule } from 'primeng/inputtext';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AvatarModule } from 'primeng/avatar';
-import { MenuService } from '@app/services/menu.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -40,17 +39,13 @@ export class HeaderComponent implements OnInit {
   constructor(
     public platformService: PlatformService,
     private router: Router,
-    private menuService: MenuService
+    private route: ActivatedRoute
   ) {}
   ngOnInit() {
     this.currentUrl.set(this.router.url);
-    this.buildMenu();
-    this.search.set('Tìm kiếm');
-  }
-
-  private buildMenu(): void {
-    this.menuService.fetchAll().subscribe((data) => {
-      this.items.set(data);
+    this.route.data.subscribe((data: any) => {
+      this.items.set(data.menu);
     });
+    this.search.set('Tìm kiếm');
   }
 }
