@@ -12,6 +12,5 @@ import { PanelModule } from 'primeng/panel';
     BreadcumbComponent,
     PanelModule,
   ],
-  exports: [ServiceComponent],
 })
 export class ServiceModule {}

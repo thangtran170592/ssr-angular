@@ -1,6 +1,6 @@
 <div class="card">
   <p-carousel
-    [value]="sliders"
+    [value]="sliders()"
     [numVisible]="1"
     [numScroll]="1"
     [circular]="true"
@@ -12,7 +12,7 @@
   >
     <ng-template let-slider #item>
       <div class="border border-surface rounded-border my-1">
-        <div class="relative mx-auto">
+        <div class="relative mx-auto" [routerLink]="slider.link">
           <img
             src="{{ slider.image }}"
             [alt]="slider.title"

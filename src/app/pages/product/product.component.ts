@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
+import { ProductService } from '@app/services/product.service';
+import { IBreadcumbItem } from '@models/breadcumb.model';
 import { IProduct } from '@models/product.model';
 
 @Component({
@@ -8,70 +10,17 @@ import { IProduct } from '@models/product.model';
   standalone: false,
 })
 export class ProductComponent implements OnInit {
-  products: IProduct[] = [];
+  items = signal<IBreadcumbItem[]>([
+    { label: 'Trang chủ', url: '/trang-chu', icon: 'pi pi-home' },
+    { label: 'Sản phẩm', url: '/san-pham' },
+  ]);
+  products = signal<IProduct[]>([]);
 
-  constructor() {}
+  constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
-    this.products = [
-      {
-        id: 1,
-        title: 'Bột Matcha Minh Diệp A7 (1Kg)',
-        price: 2250000,
-        image: 'assets/images/product/bot-matcha-minh-diep.png',
-        description:
-          'Được xay từ những lá trà non che phủ trung hạn, A7 sở hữu sắc xanh lá đậm tự nhiên, hương thơm dịu êm cùng vị umami vừa phải, ngậy béo nhẹ và gần như không đắng. Kết cấu bột đồng đều, siêu mịn (< 10 µm) giúp tan nhanh, không vón cục, tạo lớp bọt mượt khi pha latte hay đá xay. Nhờ hương vị tươi mát, chất nước đồng đều, A7 là lựa chọn lý tưởng cho quán cà phê, trà sữa và tiệm bánh muốn duy trì chất lượng ổn định với chi phí hợp lý mà vẫn chinh phục thực khách bằng màu xanh bắt mắt và vị trà rõ ràng.',
-        category: 'Matcha',
-        rating: 4.5,
-        stock: 1,
-        brand: 'Matcha Minh Diệp',
-        thumbnail: 'assets/images/product/bot-matcha-minh-diep.png',
-        unit: 'g',
-        currency: 'VND',
-      },
-      {
-        id: 2,
-        title: 'Máy rang cà phê Lysander',
-        price: 6890000,
-        image: 'assets/images/product/may-rang-lysander.jpg',
-        description:
-          'Sản phẩm được nhập khẩu hoặc phân phối chính hãng bởi Phadin Coffee.',
-        category: 'Thiết bị',
-        rating: 5,
-        brand: 'Lysander',
-        thumbnail: 'assets/images/product/may-rang-lysander.jpg',
-        unit: 'g',
-        currency: 'VND',
-      },
-      {
-        id: 3,
-        title: 'Robusta – Arabica',
-        subtitle: 'Robusta – Arabica',
-        price: 900,
-        image: 'assets/images/product/default-image.png',
-        description:
-          'TRADITIONAL BLEND (T)  được rang ở độ đậm ( Dark Roast) khử hết vị chua, nổi bật ở mùi thơm dịu, vị đắng đậm đà, nước pha ra có màu nâu đậm,, hàm lượng cafeine trung bình do được phối trộn với 30% Arabica. Việc này giúp mùi thơm của TRADITIONAL BLEND (T) đậm đà hơn ROBUSTA ORIGINAL (R) và đậm đà hơn ARABICA ORIGINAL (A)',
-        category: 'Coffee',
-        rating: 3,
-        brand: 'Robusta – Arabica',
-        thumbnail: 'assets/images/product/default-image.png',
-        unit: 'g',
-        currency: 'VND',
-      },
-      {
-        id: 4,
-        title: 'DARK BLEND (D)',
-        price: 79000,
-        image: 'assets/images/product/ca-phe-rang-xay.webp',
-        description:
-          'DARK BLEND (D)  được rang ở độ đậm ( Dark Roast) khử hết vị chua kết hợp tẩm thêm bơ và Caramel. Điều này giúp DARK BLEND trở thành loại cà phê nguyên hạt đậm đà nhất của Phadin Coffee Roasters. DARK BLEND nổi bật ở mùi thơm ngào ngạt của 30% Arabica , vị đắng đậm đà của 70% Robusta, nước pha ra có màu nâu đậm không thua kém các dòng cà phê bột truyền thống. Hàm lượng cafeine trung bình do được phối trộn với 30% Arabica.',
-        category: 'Coffee',
-        rating: 4,
-        brand: 'Robusta – Arabica',
-        thumbnail: 'assets/images/product/ca-phe-rang-xay.webp',
-        unit: 'g',
-        currency: 'VND',
-      },
-    ];
+    this.productService
+      .fetchAll()
+      .subscribe((products) => this.products.set(products));
   }
 }

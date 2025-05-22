@@ -1,20 +1,20 @@
-<p-card *ngIf="product" [styleClass]="className">
+<p-card *ngIf="product()" [styleClass]="className()">
   <ng-template pTemplate="header">
-    <img [src]="product.thumbnail" [alt]="product.title" />
+    <img [src]="product().thumbnail" [alt]="product().title" />
   </ng-template>
-  <ng-template pTemplate="title">{{ product.title }}</ng-template>
+  <ng-template pTemplate="title">{{ product().title }}</ng-template>
   <ng-template pTemplate="subtitle">
-    <p>{{ product.subtitle }}</p>
-    <p-rating [(ngModel)]="product.rating" [disabled]="true" />
+    <p>{{ product().subtitle }}</p>
+    <p-rating [(ngModel)]="product().rating" [disabled]="true" />
   </ng-template>
   <ng-template pTemplate="content">
     <p
       [appTruncate]="50"
-      [fullText]="product.description"
+      [fullText]="product().description"
       [showEllipsis]="true"
     ></p>
   </ng-template>
   <ng-template pTemplate="footer">
-    <p>{{ product.price | currency : product.currency }}</p>
+    <p>{{ product().price | currency : product().currency }}</p>
   </ng-template>
 </p-card>

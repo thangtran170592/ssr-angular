@@ -53,6 +53,12 @@ const routes: Routes = [
         loadChildren: () =>
           import('@pages/project/project.module').then((m) => m.ProjectModule),
       },
+      {
+        path: 'tin-tuc',
+        title: 'Tin Tức',
+        loadChildren: () =>
+          import('@pages/news/news.module').then((m) => m.NewsModule),
+      },
     ],
   },
 ];

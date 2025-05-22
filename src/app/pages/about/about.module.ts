@@ -7,6 +7,5 @@ import { BreadcumbComponent } from '@components/breadcumb/breadcumb.component';
 @NgModule({
   declarations: [AboutComponent],
   imports: [CommonModule, AboutRoutingModule, PanelModule, BreadcumbComponent],
-  exports: [AboutComponent],
 })
 export class AboutModule {}

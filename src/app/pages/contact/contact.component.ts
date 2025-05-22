@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, signal, ViewEncapsulation } from '@angular/core';
 import { IBreadcumbItem } from '@models/breadcumb.model';
 
 @Component({
@@ -9,8 +9,8 @@ import { IBreadcumbItem } from '@models/breadcumb.model';
   encapsulation: ViewEncapsulation.None,
 })
 export class ContactComponent {
-  items: IBreadcumbItem[] = [
+  items = signal<IBreadcumbItem[]>([
     { label: 'Trang chủ', url: '/trang-chu', icon: 'pi pi-home' },
     { label: 'Liên hệ', url: '/lien-he' },
-  ];
+  ]);
 }

@@ -6,6 +6,5 @@ import { PanelModule } from 'primeng/panel';
 @NgModule({
   declarations: [HomeComponent],
   imports: [CommonModule, HomeRoutingModule, PanelModule],
-  exports: [HomeComponent],
 })
 export class HomeModule {}

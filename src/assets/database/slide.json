@@ -1,0 +1,30 @@
+{
+  "status": 200,
+  "message": "Lấy dữ liệu thành công",
+  "data": [
+    {
+      "id": 1,
+      "image": "assets/images/slides/slide1.jpg",
+      "title": "Cà phê nguyên chất",
+      "description": "Khám phá hương vị cà phê đặc trưng của Việt Nam",
+      "link": "/tu-van-thiet-ke",
+      "isActive": true
+    },
+    {
+      "id": 2,
+      "image": "assets/images/slides/slide2.jpg",
+      "title": "Nguyên liệu pha chế",
+      "description": "Cung cấp nguyên liệu pha chế chất lượng cao",
+      "link": "/dao-tao",
+      "isActive": true
+    },
+    {
+      "id": 3,
+      "image": "assets/images/slides/slide3.jpg",
+      "title": "Thiết bị pha chế",
+      "description": "Trang bị đầy đủ dụng cụ pha chế chuyên nghiệp",
+      "link": "/dich-vu",
+      "isActive": true
+    }
+  ]
+}

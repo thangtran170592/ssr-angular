@@ -1,18 +1,20 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { ISlider } from '@models/slider.model';
 import { CarouselModule } from 'primeng/carousel';
 import { TagModule } from 'primeng/tag';
 import { PlatformService } from '@core/services/platform.service';
+import { SlideService } from '@app/services/slide.service';
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
   styleUrl: './slider.component.scss',
   standalone: true,
-  imports: [CommonModule, CarouselModule, TagModule],
+  imports: [CommonModule, CarouselModule, TagModule, RouterModule],
 })
 export class SliderComponent implements OnInit {
-  sliders: ISlider[] = [];
+  sliders = signal<ISlider[]>([]);
   responsiveOptions = [
     {
       breakpoint: '1400px',
@@ -41,30 +43,16 @@ export class SliderComponent implements OnInit {
     },
   ];
 
-  constructor(private platformService: PlatformService) {}
+  constructor(
+    private platformService: PlatformService,
+    private slideService: SlideService
+  ) {}
 
   ngOnInit() {
     if (this.platformService.isBrowser()) {
-      this.sliders = [
-        {
-          id: 1,
-          title: 'Slider 1',
-          description: 'Description 1',
-          image: 'assets/images/slider-1.jpg',
-        },
-        {
-          id: 2,
-          title: 'Slider 2',
-          description: 'Description 2',
-          image: 'assets/images/slider-2.jpg',
-        },
-        {
-          id: 3,
-          title: 'Slider 3',
-          description: 'Description 3',
-          image: 'assets/images/slider-3.jpg',
-        },
-      ];
+      this.slideService.fetchAll().subscribe((res) => {
+        this.sliders.set(res);
+      });
     }
   }
 }

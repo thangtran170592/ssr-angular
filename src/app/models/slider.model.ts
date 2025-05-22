@@ -3,4 +3,6 @@ export interface ISlider {
   title: string;
   description: string;
   image: string;
+  link?: string;
+  isActive: boolean;
 }

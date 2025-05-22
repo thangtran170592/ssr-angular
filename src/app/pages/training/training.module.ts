@@ -12,6 +12,5 @@ import { TrainingComponent } from '@pages/training/training.component';
     BreadcumbComponent,
     PanelModule,
   ],
-  exports: [TrainingComponent],
 })
 export class TrainingModule {}

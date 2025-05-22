@@ -12,6 +12,5 @@ import { ConsultingComponent } from '@pages/consulting/consulting.component';
     PanelModule,
     BreadcumbComponent,
   ],
-  exports: [ConsultingComponent],
 })
 export class ConsultingModule {}

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IProduct } from '@models/product.model';
 import { CardModule } from 'primeng/card';
@@ -19,6 +19,6 @@ import { TruncateDirective } from '@core/directives/truncate.directive';
   standalone: true,
 })
 export class ProductCardComponent {
-  @Input() product?: IProduct;
-  @Input() className?: string;
+  product = input.required<IProduct>();
+  className = input<string>('');
 }

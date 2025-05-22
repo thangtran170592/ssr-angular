@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, input, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
@@ -13,13 +13,5 @@ import { IBreadcumbItem } from '@models/breadcumb.model';
   standalone: true,
 })
 export class BreadcumbComponent {
-  private _items: IBreadcumbItem[] = [];
-
-  @Input()
-  get items(): IBreadcumbItem[] {
-    return this._items;
-  }
-  set items(value: IBreadcumbItem[]) {
-    this._items = value;
-  }
+  items = input.required<IBreadcumbItem[]>();
 }

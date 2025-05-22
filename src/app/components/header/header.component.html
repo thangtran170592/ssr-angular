@@ -1,5 +1,5 @@
 <div *ngIf="platformService.isBrowser()">
-  <p-megamenu [model]="items" styleClass="custom-megamenu">
+  <p-megamenu [model]="items()" styleClass="custom-megamenu">
     <ng-template #start>
       <p-avatar
         [routerLink]="'/tong-quan'"

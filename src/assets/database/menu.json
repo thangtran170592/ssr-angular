@@ -1,0 +1,70 @@
+{
+  "status": 200,
+  "message": "Lấy dữ liệu thành công",
+  "data": [
+    {
+      "id": "1",
+      "label": "Trang Chủ",
+      "routerLink": "/trang-chu",
+      "icon": "pi pi-home",
+      "root": true,
+      "styleClass": "this.currentUrl === '/trang-chu' ? 'active' : ''"
+    },
+    {
+      "id": "3",
+      "label": "Sản Phẩm",
+      "routerLink": "/san-pham",
+      "icon": "pi pi-tags",
+      "root": true,
+      "styleClass": "this.currentUrl === '/san-pham' ? 'active' : ''"
+    },
+    {
+      "id": "5",
+      "label": "Tư Vấn Thiết Kế",
+      "routerLink": "/tu-van-thiet-ke",
+      "icon": "pi pi-comments",
+      "root": true,
+      "styleClass": "this.currentUrl === '/tu-van-thiet-ke' ? 'active' : ''"
+    },
+    {
+      "id": "6",
+      "label": "Đào Tạo",
+      "routerLink": "/dao-tao",
+      "icon": "pi pi-book",
+      "root": true,
+      "styleClass": "this.currentUrl === '/dao-tao' ? 'active' : ''"
+    },
+    {
+      "id": "7",
+      "label": "Dịch Vụ",
+      "routerLink": "/dich-vu",
+      "icon": "pi pi-wrench",
+      "root": true,
+      "styleClass": "this.currentUrl === '/dich-vu' ? 'active' : ''"
+    },
+    {
+      "id": "8",
+      "label": "Tin Tức",
+      "routerLink": "/tin-tuc",
+      "icon": "pi pi-megaphone",
+      "root": true,
+      "styleClass": "this.currentUrl === '/tin-tuc' ? 'active' : ''"
+    },
+    {
+      "id": "2",
+      "label": "Giới Thiệu",
+      "routerLink": "/gioi-thieu",
+      "icon": "pi pi-info-circle",
+      "root": true,
+      "styleClass": "this.currentUrl === '/gioi-thieu' ? 'active' : ''"
+    },
+    {
+      "id": "9",
+      "label": "Liên Hệ",
+      "routerLink": "/lien-he",
+      "icon": "pi pi-phone",
+      "root": true,
+      "styleClass": "this.currentUrl === '/lien-he' ? 'active' : ''"
+    }
+  ]
+}

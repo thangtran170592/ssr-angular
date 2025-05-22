@@ -1,15 +1,16 @@
 import { Component, signal, ViewEncapsulation } from '@angular/core';
 import { IBreadcumbItem } from '@models/breadcumb.model';
+
 @Component({
-  selector: 'app-consulting',
-  templateUrl: './consulting.component.html',
-  styleUrl: './consulting.component.scss',
+  selector: 'app-news',
+  templateUrl: './news.component.html',
+  styleUrl: './news.component.scss',
   standalone: false,
   encapsulation: ViewEncapsulation.None,
 })
-export class ConsultingComponent {
+export class NewsComponent {
   items = signal<IBreadcumbItem[]>([
     { label: 'Trang chủ', url: '/trang-chu', icon: 'pi pi-home' },
-    { label: 'Tư vấn thiết kế', url: '/tu-van-thiet-ke' },
+    { label: 'Tin tức', url: '/tin-tuc' },
   ]);
 }

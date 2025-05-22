@@ -12,6 +12,5 @@ import { BreadcumbComponent } from '@components/breadcumb/breadcumb.component';
     PanelModule,
     BreadcumbComponent,
   ],
-  exports: [ContactComponent],
 })
 export class ContactModule {}
